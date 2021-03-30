@@ -6,17 +6,9 @@ m5stack-core2 上で動作するポケッチ風アプリケーションです．
 
 画面下部の左右ボタンで機能を切り替えることができます。
 
-### 時計
+時計・メモ帳・万歩計
 
-<img src="https://user-images.githubusercontent.com/66683209/113024452-b8330880-91c1-11eb-8f96-e7d941afe026.png" width="400px">
-
-### メモ帳
-
-<img src="https://user-images.githubusercontent.com/66683209/113024840-2e376f80-91c2-11eb-95af-bab39496beea.png" width="400px">
-
-### 万歩計
-
-<img src="https://user-images.githubusercontent.com/66683209/113025052-6f2f8400-91c2-11eb-8ee0-37d0c3ca7a21.png" width="400px">
+<img src="https://user-images.githubusercontent.com/66683209/113024452-b8330880-91c1-11eb-8f96-e7d941afe026.png" width="200px"> <img src="https://user-images.githubusercontent.com/66683209/113024840-2e376f80-91c2-11eb-95af-bab39496beea.png" width="200px"> <img src="https://user-images.githubusercontent.com/66683209/113025052-6f2f8400-91c2-11eb-8ee0-37d0c3ca7a21.png" width="200px">
 
 ## Usage
 
