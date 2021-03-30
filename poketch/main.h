@@ -1,5 +1,5 @@
-#ifndef _POKETTI_
-#define _POKETTI_
+#ifndef _POKETCH_H_
+#define _POKETCH_H_
 #include <M5Core2.h>
 #include <LovyanGFX.hpp>
 static LGFX lcd;

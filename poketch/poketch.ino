@@ -1,4 +1,4 @@
-// pokettiの共通ファイル群
+// poketchの共通ファイル
 #include "main.h"
 
 // Wifi接続関連
