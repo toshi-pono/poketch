@@ -16,10 +16,10 @@ private:
     const int16_t _bottom = 240 - 5 - _coin_width / 2;
     const float _rebound = 0.7F;
     const float _gravityAcc = 1.7F;
+    const float _vy_0 = 17.0F;
 
     float _coin_vy = 0.0F;
 
-    int16_t _coin_x;
     int16_t _coin_y;
     int16_t coinStatus = 0; // 0: Front 1: mid 2: Back
 
@@ -51,7 +51,6 @@ void CoinToss::setup()
 
     _anim_cnt = 0;
     _isAnimation = false;
-    _coin_x = 320 / 2;
     _coin_y = _bottom;
     sprite_center.createSprite(_coin_width, 240);
     drawCoin(coinStatus);
@@ -67,9 +66,8 @@ void CoinToss::update()
         // コイントスの結果を決定
         coinStatus = (random(2) == 0) ? 0 : 2;
 
-        _coin_x = 320 / 2;
         _coin_y = _bottom;
-        _coin_vy = 20.0F;
+        _coin_vy = _vy_0;
         _bottom_count = 0;
         _anim_cnt = coinStatus * frame;
     }
