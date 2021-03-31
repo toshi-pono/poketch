@@ -20,6 +20,10 @@ static Draw draw;
 #include "pedometer.h"
 static Pedometer pedometer;
 
+// コイントス
+#include "coinToss.h"
+static CoinToss cointoss;
+
 // 起動時のモード
 static int watchMode = WATCH_CLOCK;
 
@@ -31,6 +35,7 @@ void setup()
     lcd.init();
     lcd.setColorDepth(16);
     lcd.setBrightness(128);
+    randomSeed(analogRead(0));
     // かっこいい感じのロード画面を作りたい
     connectWifi();
     delay(1000);
@@ -85,6 +90,9 @@ void modeInit(int mode)
     case WATCH_PEDOMETER:
         pedometer.setup();
         break;
+    case WATCH_COINTOSS:
+        cointoss.setup();
+        break;
     }
 }
 // ページのメイン処理
@@ -101,6 +109,9 @@ void modeUpdate(int mode)
     case WATCH_PEDOMETER:
         pedometer.update();
         break;
+    case WATCH_COINTOSS:
+        cointoss.update();
+        break;
     }
 }
 // 機能のクリア
@@ -116,6 +127,9 @@ void modeClear(int mode)
         break;
     case WATCH_PEDOMETER:
         pedometer.clear();
+        break;
+    case WATCH_COINTOSS:
+        cointoss.clear();
         break;
     }
 }
