@@ -73,7 +73,7 @@ void loop()
     pedometer.background();
 
     // 遅延
-    delay(13);
+    delay(16);
 }
 
 // 機能の初期化
