@@ -14,8 +14,8 @@ private:
 
     const int16_t _coin_width = 320 / 5 * 2;
     const int16_t _bottom = 240 - 5 - _coin_width / 2;
-    const float _rebound = 0.7F;
-    const float _gravityAcc = 1.7F;
+    const float _rebound = 0.6F;
+    const float _gravityAcc = 1.6F;
     const float _vy_0 = 17.0F;
 
     float _coin_vy = 0.0F;
@@ -60,7 +60,7 @@ void CoinToss::setup()
 
 void CoinToss::update()
 {
-    const int16_t frame = 2;
+    const int16_t frame = 1;
     // ボタンのクリック判定
     if (!_isAnimation && btn_coin->wasPressed())
     {
