@@ -4,7 +4,7 @@
 // Wifi接続関連
 #include <WiFi.h>
 #include <time.h>
-#include "./lib/ntp.h"
+#include "src/lib/ntp.h"
 char ssid[] = "**********";
 char pass[] = "**********";
 

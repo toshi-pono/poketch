@@ -4,8 +4,8 @@
 #include <LovyanGFX.hpp>
 static LGFX lcd;
 
-#include "./lib/printNumber.h"
-#include "./lib/printButton.h"
+#include "src/lib/printNumber.h"
+#include "src/lib/printButton.h"
 static PrintNumber prn(&lcd);
 
 #define POK_WHITE 0x75AE
