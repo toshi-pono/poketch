@@ -31,9 +31,11 @@ private:
 public:
     CoinToss()
     {
+        btn_coin = new Button((320 - _coin_width) / 2, _bottom - _coin_width / 2, _coin_width, _coin_width, true, "btn-coin");
     }
     ~CoinToss()
     {
+        delete btn_coin;
     }
     void setup();
     void update();
@@ -60,7 +62,7 @@ void CoinToss::update()
 {
     const int16_t frame = 2;
     // ボタンのクリック判定
-    if (!_isAnimation && M5.BtnB.wasPressed())
+    if (!_isAnimation && btn_coin->wasPressed())
     {
         _isAnimation = true;
         // コイントスの結果を決定
