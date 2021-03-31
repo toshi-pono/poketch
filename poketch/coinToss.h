@@ -29,14 +29,6 @@ private:
     void drawCoin(int16_t type);
 
 public:
-    CoinToss()
-    {
-        btn_coin = new Button((320 - _coin_width) / 2, _bottom - _coin_width / 2, _coin_width, _coin_width, true, "btn-coin");
-    }
-    ~CoinToss()
-    {
-        delete btn_coin;
-    }
     void setup();
     void update();
     void clear();
@@ -50,6 +42,8 @@ void CoinToss::setup()
     lcd.fillRect(0, 240 / 2, 320, 10, POK_GRAY);
     lcd.fillRect(0, 240 / 2 + 10 + 3, 320, 6);
     lcd.fillRect(0, 240 / 2 + 10 + 3 + 6 + 3, 320, 2);
+
+    btn_coin = new Button((320 - _coin_width) / 2, _bottom - _coin_width / 2, _coin_width, _coin_width, true, "btn-coin");
 
     _anim_cnt = 0;
     _isAnimation = false;
@@ -101,6 +95,7 @@ void CoinToss::update()
 void CoinToss::clear()
 {
     sprite_center.deleteSprite();
+    delete btn_coin;
 }
 
 void CoinToss::drawCoin(int16_t type)
