@@ -26,7 +26,7 @@ const int16_t DgClock::_size = 12;
 const int16_t DgClock::_x0 = 34;
 const int16_t DgClock::_y0 = 50;
 
-inline void DgClock::setup()
+void DgClock::setup()
 {
     lcd.fillScreen(POK_WHITE);
     lcd.pushImage(0, 240 - imgHeight, imgWidth, imgHeight, img);
@@ -39,7 +39,8 @@ inline void DgClock::setup()
     oldMinutes = -1;
     update();
 }
-inline void DgClock::update()
+
+void DgClock::update()
 {
     M5.Rtc.GetTime(&_time);
     if (oldMinutes != _time.Minutes)
@@ -57,10 +58,11 @@ inline void DgClock::update()
         oldMinutes = _time.Minutes;
     }
 }
-inline void DgClock::clear()
+
+void DgClock::clear()
 {
     // スプライトのメモリ解放
     sprite_clock.deleteSprite();
 }
 
-#endif
+#endif // _DG_CLOCK_

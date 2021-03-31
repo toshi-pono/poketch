@@ -59,7 +59,7 @@ public:
     void background();
 };
 
-inline void Pedometer::setup()
+void Pedometer::setup()
 {
     lcd.fillScreen(POK_WHITE);
     _btn_image.createSprite(button_width / 5 * 2 + 2, button_width / 5 * 2 + 2);
@@ -76,7 +76,7 @@ inline void Pedometer::setup()
     update();
 }
 
-inline void Pedometer::update()
+void Pedometer::update()
 {
     if (_btn_clear->checkPress() && steps != 0)
     {
@@ -97,7 +97,7 @@ inline void Pedometer::update()
 }
 
 // 歩数を計測する処理
-inline void Pedometer::background()
+void Pedometer::background()
 {
     // 加速度取得
     float accX, accY, accZ;
@@ -138,10 +138,9 @@ inline void Pedometer::background()
     _beforeA = nowA;
 }
 
-inline void Pedometer::clear()
+void Pedometer::clear()
 {
     _btn_image.deleteSprite();
-    return;
 }
 
-#endif
+#endif // _DG_PEDOMETER_

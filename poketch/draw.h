@@ -63,7 +63,7 @@ public:
     void clear();
 };
 
-inline void Draw::setup()
+void Draw::setup()
 {
     lcd.fillScreen(POK_WHITE);
     // ボタンの設定
@@ -84,7 +84,7 @@ inline void Draw::setup()
     btn_eraser->print();
 }
 
-inline void Draw::update()
+void Draw::update()
 {
     // ボタンの状態取得・変更
     if (btn_pen->wasPress() && !_isDrawPen)
@@ -150,14 +150,14 @@ inline void Draw::update()
     }
 }
 
-inline void Draw::clear()
+void Draw::clear()
 {
     // スプライトのメモリ解放
     sprite_pen.deleteSprite();
     sprite_eraser.deleteSprite();
 }
 
-inline void Draw::drawEraserImage(bool isActive)
+void Draw::drawEraserImage(bool isActive)
 {
     // 背景の塗りつぶし
     // HACK: 透過色で対応したい
@@ -181,7 +181,7 @@ inline void Draw::drawEraserImage(bool isActive)
         sprite_eraser.fillRect(LINE_WIDTH, _eraser_height - _eraser_out, _eraser_width - LINE_WIDTH * 2, _eraser_out - LINE_WIDTH, POK_GRAY);
     }
 }
-inline void Draw::drawPenImage(bool isActive)
+void Draw::drawPenImage(bool isActive)
 {
     // 背景の塗りつぶし
     // HACK: 透過色で対応したい
@@ -205,7 +205,7 @@ inline void Draw::drawPenImage(bool isActive)
 }
 
 // 線の描画
-inline void Draw::drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1)
+void Draw::drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1)
 {
     drawDot(x0, y0);
     drawDot(x1, y1);
@@ -261,7 +261,7 @@ inline void Draw::drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1)
         }
     }
 }
-inline void Draw::drawDot(int16_t x, int16_t y)
+void Draw::drawDot(int16_t x, int16_t y)
 {
     if (x > 0 && y > 0 && x < WINDOW_WIDTH - TAB_WIDTH && y < WINDOW_HEIGHT)
     {
@@ -279,4 +279,4 @@ inline void Draw::drawDot(int16_t x, int16_t y)
     Serial.println("drawDot");
 }
 
-#endif
+#endif // _DG_DRAW_
