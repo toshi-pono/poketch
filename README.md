@@ -19,6 +19,8 @@ https://trap.jp/post/1266/
 <img src="https://user-images.githubusercontent.com/66683209/113190548-5e9d0d80-9297-11eb-97b3-69ca546d1fa1.gif" width="200px">
 
 ## Usage
+LovyanGFXを使っています
+https://github.com/lovyan03/LovyanGFX
 
 poketch.ino の 8,9 行目，
 
