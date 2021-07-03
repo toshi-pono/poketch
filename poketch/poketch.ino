@@ -38,6 +38,7 @@ void setup()
     randomSeed(analogRead(0));
     // かっこいい感じのロード画面を作りたい
     connectWifi();
+    WiFi.disconnect(); // Memo: プログラム中でWi-Fi 機能を使うときは削除する
     delay(1000);
     Serial.println("modeInit");
     modeInit(watchMode);
