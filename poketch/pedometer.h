@@ -30,7 +30,7 @@ private:
     const float LOW_PATH = 0.1F;
 
     float _threshold = 1.10F;
-    float _beforeA = 0.0F;
+    float _beforeA = 1.0F;
     bool _isUnder = false;
     float _maxA = 0.0F;
     float _minA = 100.0F;
