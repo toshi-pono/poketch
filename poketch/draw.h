@@ -20,7 +20,7 @@ private:
     const int16_t _pen_out = 12;
 
     const int16_t dot = 4;
-    const int16_t e_rato = 3;
+    const int16_t e_ratio = 3;
 
     LGFX_Sprite sprite_pen;
     LGFX_Sprite sprite_eraser;
@@ -273,7 +273,9 @@ void Draw::drawDot(int16_t x, int16_t y)
         else
         {
             // 消しゴム
-            lcd.fillRect(floor(x / (dot * e_rato)) * dot * e_rato, floor(y / (dot * e_rato)) * dot * e_rato, dot * e_rato, dot * e_rato, POK_WHITE);
+            int16_t x_eraser = floor(x / (dot * e_ratio)) * dot * e_ratio;
+            int16_t y_eraser = floor(y / (dot * e_ratio)) * dot * e_ratio;
+            lcd.fillRect(x_eraser, y_eraser, std::min(dot * e_ratio, WINDOW_WIDTH - TAB_WIDTH - x_eraser), dot * e_ratio, POK_WHITE);
         }
     }
     Serial.println("drawDot");
