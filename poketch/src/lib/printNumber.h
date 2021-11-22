@@ -1,6 +1,7 @@
 #ifndef _print_NUMBER_
 #define _print_NUMBER_
 #include <LovyanGFX.hpp>
+#include <vector>
 
 class PrintNumber
 {
